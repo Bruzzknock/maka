@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ConfigurationView">
+   <center>
+      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Columns: " />
+            <TextField fx:id="columnsField"/>
+            <Label text="Rows:" />
+            <TextField fx:id="rowsField"/>
+            <Button mnemonicParsing="false" text="Confirm" onAction="#handleConfirm"/>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <Label alignment="BOTTOM_CENTER" text="Please enter the number of columns and rows. The number can&quot;t exceed 50" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>

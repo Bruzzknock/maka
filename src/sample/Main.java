@@ -11,29 +11,33 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private static Main app;
+    private static Stage pStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../view/sample.fxml"));
+
+        setpStage(primaryStage);
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 600, 800));
         primaryStage.show();
     }
 
-    private void showMainMenu()
-    {
-        /*try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ExaminationOverview.fxml"));
-            TabPane examinationOverview = (TabPane) loader.load();
+    public static Main getMainApp() {
+        return app;
+    }
 
-            examinationsController = loader.getController();
-            examinationsController.setMainApp(this);
+    private void setMainApp(Main app) {
+        Main.app = app;
+    }
 
-            primaryStage.setScene(new Scene(examinationOverview));
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+    public static Stage getpStage() {
+        return pStage;
+    }
+
+    public static void setpStage(Stage pStage) {
+        Main.pStage = pStage;
     }
 
     public static void main(String[] args) {
